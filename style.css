@@ -1,33 +1,119 @@
-/* Dinamik Işık Modu Yumuşak Geçiş Efektleri */
-body {
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Hafif Açık Renk Teması */
-.light-mode {
-    background-color: #f3e8ff !important;
-    color: #1e1b4b !important;
-}
-
-.light-mode .card {
-    background-color: #ffffff !important;
-    border-color: #e9d5ff !important;
-}
-
-/* Özel kaydırma çubuğu tasarımı (Mağaza için) */
-::-webkit-scrollbar {
+/* --- Özel Kaydırma Çubuğu (Custom Scrollbar) --- */
+/* Sıralama ve market listelerinin uygulamanın temasına uygun görünmesi için */
+.custom-scrollbar::-webkit-scrollbar {
     width: 6px;
 }
 
-::-webkit-scrollbar-track {
-    background: transparent;
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(23, 23, 23, 0.4);
+    border-radius: 8px;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #a855f7;
-    border-radius: 10px;
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(168, 85, 247, 0.4);
+    border-radius: 8px;
+    transition: background 0.2s;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #c084fc;
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 85, 247, 0.7);
+}
+
+/* --- Işık Modu Teması (Light Mode) --- */
+/* body elemanına .light-mode sınıfı eklendiğinde devreye girecek stiller */
+body.light-mode {
+    background-color: #f4f4f5; /* bg-zinc-100 alternatifi */
+    color: #18181b;            /* text-zinc-900 alternatifi */
+}
+
+body.light-mode header {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(228, 228, 231, 0.8);
+}
+
+body.light-mode #auth-status span {
+    color: #3f3f46;
+}
+
+/* Giriş Ekranı Kartı */
+body.light-mode #auth-container > div {
+    background-color: #ffffff;
+    border-color: #e4e4e7;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode #auth-container p {
+    color: #71717a;
+}
+
+body.light-mode #btn-google-login {
+    background-color: #18181b;
+    color: #ffffff;
+}
+
+body.light-mode #btn-google-login:hover {
+    background-color: #27272a;
+}
+
+/* Oyun Panelleri */
+body.light-mode #game-container > div:first-child {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-color: rgba(228, 228, 231, 0.6);
+}
+
+body.light-mode #game-container > div:first-child p {
+    color: #a1a1aa;
+}
+
+body.light-mode #game-container .text-zinc-400 {
+    color: #71717a;
+}
+
+/* Sıralama ve Market Kutuları */
+body.light-mode #game-container > div:last-child > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: #e4e4e7;
+}
+
+body.light-mode #game-container h3 {
+    color: #27272a;
+}
+
+body.light-mode #refresh-leaderboard {
+    background-color: rgba(228, 228, 231, 0.8);
+    color: #27272a;
+}
+
+body.light-mode #refresh-leaderboard:hover {
+    background-color: #d4d4d8;
+}
+
+/* Sıralama Satırları ve Market Eşyaları */
+body.light-mode #leaderboard-list > div,
+body.light-mode #market-list > div {
+    background-color: rgba(244, 244, 245, 0.8);
+    border-color: #e4e4e7;
+}
+
+body.light-mode #leaderboard-list span.text-zinc-200,
+body.light-mode #market-list span.text-zinc-200 {
+    color: #27272a;
+}
+
+/* Işık Modunda Kaydırma Çubuğu Düzenlemesi */
+body.light-mode .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(244, 244, 245, 0.5);
+}
+
+body.light-mode .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(168, 85, 247, 0.3);
+}
+
+body.light-mode .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 85, 247, 0.6);
+}
+
+/* Tıklama Butonu Efekti Koruması */
+#click-btn {
+    -webkit-tap-highlight-color: transparent;
 }
